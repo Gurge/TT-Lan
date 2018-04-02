@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 
 services:
   teamspeak:    
@@ -9,10 +9,14 @@ services:
       - "30033:30033"
       - "9987:9987/udp"
     volumes:
-      - "./v/teamspeak:/home/teamspeak:rw"
-    logging:
-      driver: json-file
-      options:
-        max-size: "100k"
-        max-file: "20"
+      - serverfiles:/home/lgsm/serverfiles
+      - log:/home/lgsm/log
+
+volumes:
+  serverfiles:  
+  log:
+  
+
+      
+
       
